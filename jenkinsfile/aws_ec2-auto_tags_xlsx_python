@@ -1,0 +1,9 @@
+pipeline {
+    stages{
+        stage ("Git-Chekcout"){
+		
+		   git credentialsId: 'git-hima', url: 'https://github.com/ehimshr/aws_ec2-auto_tags_xlsx_python.git'
+		
+        }		
+   }
+}
