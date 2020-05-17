@@ -28,10 +28,15 @@ pipeline {
 	stage("upload") {
 	    steps {
 		script {
+		    echo '=========== Upload a FILE =============='
                     def inputFile = input message: 'Upload file', parameters: [file(name: "tags.txt")]
 		    echo ("TXT FILE PATH IS : ${inputFile}")
 		    echo ("Worspace path : ${env.WORKSPACE}")
+		    echo '=========== Uploaded a FILE =============='
 		}
+		sh label: '', script: 'cp -R ${inputFile}  ${env.WORKSPACE}'
+		echo '=========== Copied a FILE =============='
+		
 	    }
         }
 	
