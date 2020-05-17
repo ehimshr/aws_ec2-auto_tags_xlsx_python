@@ -4,6 +4,11 @@ pipeline {
 	    file(name: "excel.txt")
     }
     stages{
+        stage ("Clean-WorkSpace"){
+	    steps {
+	        deleteDir()
+	    }
+	}
         stage ("Git-Chekcout"){
             steps {
 		git credentialsId: 'git-hima', url: 'https://github.com/ehimshr/aws_ec2-auto_tags_xlsx_python.git'
