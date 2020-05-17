@@ -1,5 +1,8 @@
 pipeline {
     agent any
+    parameters {
+	    file(name: "excel.txt")
+    }
     stages{
         stage ("Git-Chekcout"){
             steps {
