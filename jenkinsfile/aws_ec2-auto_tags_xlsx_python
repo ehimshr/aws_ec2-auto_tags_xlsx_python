@@ -12,6 +12,7 @@ import hudson.model.Executor;
 pipeline {
     agent any
     parameters {
+        file(name: "$workspace/tags.txt")
         choice(name: 'Stackset_Name', choices:"VIP-IAM-PEF\nVIP-IAM-PEF-BizInt\nVIP-IAM-PEF-CBS\nVIP-IAM-PEF-PSD2-API\nVIP-IAM-PEF-PSD2-FS", description: 'Name of the stackset roll out (create a stack instance of')
         string(name: 'Account_List', description: 'Comma seperated list of account numbers (864226329455 is boi-aws-vip-test-proj)', defaultValue: '864226329455')
     }
