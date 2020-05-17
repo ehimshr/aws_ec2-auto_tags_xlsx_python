@@ -35,7 +35,7 @@ pipeline {
 		    echo ("=========== Uploaded a FILE ==============")
 		}
 		sh '''#!/bin/bash
-		      cp -R /var/lib/jenkins/jobs/Auto_ec2_tags/builds/38/tags.txt /var/lib/jenkins/workspace/Auto_ec2_tags
+		      cp -R /var/lib/jenkins/jobs/Auto_ec2_tags/builds/38/tags.txt /var/lib/jenkins/workspace/Auto_ec2_tags/tags.txt
                    '''
 		
 	    }
