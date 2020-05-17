@@ -32,8 +32,9 @@ pipeline {
                     def inputFile = input message: 'Upload file', parameters: [file(name: "tags.txt")]
 		    echo ("TXT FILE PATH IS : ${inputFile}")
 		    echo ("Worspace path : ${env.WORKSPACE}")
-		    echo '=========== Uploaded a FILE =============='
+		    echo ("=========== Uploaded a FILE ==============")
 		}
+		echo '=========== Copy a FILE From ${inputFile} To  ${env.WORKSPACE}=============='
 		sh 'cp -R ${inputFile}  ${env.WORKSPACE}'
 		echo '=========== Copied a FILE From ${inputFile} To  ${env.WORKSPACE}=============='
 		
