@@ -33,11 +33,9 @@ pipeline {
 		    echo ("TXT FILE PATH IS : ${inputFile}")
 		    echo ("Worspace path : ${env.WORKSPACE}")
 		    echo ("=========== Uploaded a FILE ==============")
-		    echo ("=========== Copy a FILE From ${inputFile} To  ${env.WORKSPACE}==============")
-		    sh 'cp -R ${inputFile}  ${env.WORKSPACE}'
-		    echo ("=========== Copied a FILE From ${inputFile} To  ${env.WORKSPACE}==============")
 		}
-		
+		sh label: '', script: '''sudo cp -R /var/lib/jenkins/jobs/Auto_ec2_tags/builds/38/tags.txt /var/lib/jenkins/workspace/Auto_ec2_tags
+'''
 		
 	    }
         }
