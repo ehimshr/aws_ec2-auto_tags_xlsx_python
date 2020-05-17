@@ -22,13 +22,30 @@ pipeline {
 	        deleteDir()
 	    }
 	}
-	stage("upload") {
+	/*stage("upload") {
 	    steps {
 		script {
                     def inputFile = input message: 'Upload file', parameters: [file(name: "$workspace/tags.txt")]
 		}
 	    }
+        }*/
+	stage('Upload a CSV') {
+         steps {
+             script {
+                 
+                        def inputCSVPath = input message: 'Upload file', parameters: [file(name: 'Test.csv', description: 'Upload only CSV file')]
+                        def csvContent = readFile "${inputCSVPath}"
+                        
+                         echo ("CSV FILE PATH IS : ${inputCSVPath}")
+                         echo("CSV CONTENT IS: ${csvContent}") 
         }
+                 
+                 echo env.STAGE_NAME
+                 echo '=========== Upload a CSV =============='
+                
+                        
+         }
+      }
         stage ("Git-Chekcout"){
             steps {
 	        dir("${env.WORKSPACE}"){
