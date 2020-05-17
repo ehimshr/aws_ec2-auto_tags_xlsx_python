@@ -1,3 +1,14 @@
+import groovy.json.*;
+import org.apache.*;
+import org.apache.commons.io.FileUtils;
+import org.codehaus.groovy.modules.HTTPBuilder.*;
+import hudson.security.AuthorizationMatrixProperty;
+import jenkins.model.Jenkins;
+import hudson.FilePath;
+import hudson.model.ParametersAction;
+import hudson.model.FileParameterValue;
+import hudson.model.Executor;
+
 pipeline {
     agent any
     
