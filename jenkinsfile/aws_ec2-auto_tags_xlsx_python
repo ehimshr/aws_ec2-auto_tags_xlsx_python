@@ -34,8 +34,8 @@ pipeline {
 		    echo ("Worspace path : ${env.WORKSPACE}")
 		    echo '=========== Uploaded a FILE =============='
 		}
-		sh label: '', script: 'cp -R ${inputFile}  ${env.WORKSPACE}'
-		echo '=========== Copied a FILE =============='
+		sh 'cp -R ${inputFile}  ${env.WORKSPACE}'
+		echo '=========== Copied a FILE From ${inputFile} To  ${env.WORKSPACE}=============='
 		
 	    }
         }
