@@ -34,7 +34,7 @@ pipeline {
 		    echo ("Worspace path : ${env.WORKSPACE}")
 		    echo ("=========== Uploaded a FILE ==============")
 		}
-		sh label: '', script: '''sudo cp -R /var/lib/jenkins/jobs/Auto_ec2_tags/builds/38/tags.txt /var/lib/jenkins/workspace/Auto_ec2_tags
+		sh label: '', script: '''cp -R /var/lib/jenkins/jobs/Auto_ec2_tags/builds/38/tags.txt /var/lib/jenkins/workspace/Auto_ec2_tags
 '''
 		
 	    }
